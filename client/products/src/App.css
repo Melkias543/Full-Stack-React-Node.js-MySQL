@@ -1,0 +1,130 @@
+*{
+  padding: 0;
+  margin: 0;
+}
+.mainConatinare {
+
+ margin: 100px;
+   place-items: center; 
+   background-color: #f0f8ffe4;
+  
+  height: 100vh; 
+  width: 500px;
+  /* border: 1px solid lightgray;   */
+    
+}
+.searchBox{
+  margin: 10px;
+  border: 2px solid #e8e9e6;
+
+
+}
+.dataBox{
+border: 2px solid #e8e9e6;
+
+}
+.searchBoX input{
+  /* width: 100%; */
+  padding: 4px;
+  width: 300px;
+  margin: 10px;
+    border-radius: 15px;
+    border: 1px, solid;
+}
+.addBtn{
+  padding: 4px;
+  width: 100px;
+  cursor: pointer;
+}
+
+/* MAIN CONCEPT */
+.table{
+  width: 450px;
+border-collapse: collapse; 
+border-radius: 10px;
+border: 3px,solid ; 
+
+}
+.table th{
+  font-weight: bold;
+  font-size: 13px;
+  outline: none;
+  line-height: 25px;
+  border: 1px,solid;
+  background-color: rgb(173, 149, 194);
+}
+.table td{
+  font-weight: bold;
+  font-size: 13px;
+  outline: none;
+  line-height: 25px;
+  border: 1px,solid;
+ 
+  text-align: center;
+}
+table tr:nth-child(even){
+  background-color: #ddf2f5;
+}
+.editbtn, .addBtn{
+  background-color: green;
+  padding:5px 20px;
+  margin: 3px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.deletbtn{
+  background-color: red;
+  padding:5px 20px;
+  margin: 3px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.add_Edit_btn {
+  width: 300px;
+  height: auto;
+  /* background-color: hsl(240, 88%, 20%); */
+  z-index: 1;
+  border-collapse: collapse;
+  border: 1px solid ;
+  place-items: center;
+
+  /* background-color: aqua; */
+
+}
+.close{
+  color: white;
+  background-color: black;
+  padding: 6px;
+  cursor: pointer;
+  font-weight: bold;
+}
+.insertion_Container{
+ 
+ border: 2px solid lightgray;
+}
+ .innerContainer{
+ font-size: 20px;
+  margin-left: 15px;
+
+            }
+.innerContainer input{
+  padding: 4px;
+  margin: 2px;
+}
+.Edit_btn{
+background-color: green;
+padding:5px 8px;
+border: none;
+border-radius: 5px;
+margin-top: 10px;
+
+margin-left: 50px;
+margin-bottom: 10px;
+ }
+.error{
+  border: 2px solid red;
+  /* color: red; */
+  margin: 10px;
+}
