@@ -19,7 +19,7 @@ app.use(cors())
   dbConnection.getConnection((err,connection)=>{
     if (err) throw err
     console.log('database connnected successfully!')
-    connection.release();
+    // connection.release();
   })
 
 
@@ -36,10 +36,12 @@ dbConnection.query(select,(err,result)=>{
      })
 })
 app.post('/products',(req,res)=>{
- const insert= "INSERT INTO products(`name`, `category`, `brand`) VALUES (?, ?, ?)";
-
-  const values =[req.body.name,req.body.category,req.body.brand]
-  dbConnection.query(insert,values, (err,req, result) => {
+  const insert =
+    "INSERT INTO products(`name`, `category`, `brand`) VALUES (?, ?, ?)";
+  // const [name,category,brand]=req.body
+  // const values = [name, category, brand];
+  const values = [req.body.name, req.body.category, req.body.brand];
+  dbConnection.query(insert, values, (err, req, result) => {
     if (err) return res.json(err);
     return res.json(result);
   });
@@ -51,10 +53,10 @@ app.post('/products',(req,res)=>{
 app.patch("/products/:productId", (req, res) => {
   const productId = Number(req.params.productId);
   const Update =
-    "UPDATE products SET `name` = ?, `category` = ?, `brand` = ? WHERE productId = ?";;
+    "UPDATE products SET `name` = ?, `category` = ?, `brand` = ? WHERE productId = ?";
   dbConnection.query(
     Update,
-    [req.body.name, req.body.category, req.body.BRAND, productId],
+    [req.body.name, req.body.category, req.body.brand, productId],
     (err, result) => {
       if (err) return res.json(err);
       return res.json(result);

@@ -14,16 +14,6 @@ function App() {
   });
   const [error, setError] = useState("");
 
-  // const handleSearchValue = (e) => {
-  //   const searchValue = e.target.value.toLowerCase();
-  //   const filterData = products.filter(
-  //     (product) =>
-  //       product.name.toLowerCase().includes(searchValue) ||
-  //       product.catagory.toLowerCase().includes(searchValue) ||
-  //       product.brand.toLowerCase().includes(searchValue)
-  //   );
-  //   setFilterProduucts(filterData);
-  // };
 
   const handleSearchValue = (e) => {
     const searchValue = e.target.value.toLowerCase();
@@ -41,12 +31,12 @@ function App() {
   };
   const toHide = () => {
     setIsopen(false);
-    //  getAllProducts()
+    
   };
 
   const getAllProducts = async () => {
     axios.get("http://localhost:2003/products").then((res) => {
-      // console.log(res.data)
+      
       setProduucts(res.data);
       setFilterProduucts(res.data);
     });
@@ -56,49 +46,12 @@ function App() {
     setProductData({ ...productData, [e.target.name]: e.target.value });
   };
 
-  // const handleSubmit= async (e)=>{
-  // e.preventDefault();
-  // axios.post("http://localhost:2003/products", productData).then((res)=>{
-  //   console.log(res.data)
-  //   setProductData(res.data);
-  // });
-  // }
 
-  // const handleSubmit = async (e) => {
-  //   e.preventDefault();
-  //   let errMsg = "";
-  //   if (!productData.name || !productData.category || !productData.brand) {
-  //     errMsg = "All fields reguired!";
-  //   }
-  //   if ( (errMsg.length===0) && productData.productId) {
-  //     // Correct condition
-  //     // Update an existing product
-  //     axios
-  //       .patch(
-  //         `http://localhost:2003/products/${productData.productId}`,
-  //         productData
-  //       )
-  //       .then((res) => {
-  //         console.log("Product updated:", res.data);
-  //         setProductData({ name: "", category: "", brand: "" }); // Reset the form
-  //         getAllProducts(); // Fetch updated products
-  //         setIsopen(false); // Close the popup
-  //       });
-  //   } else if (errMsg.length===0){
-  //     axios.post("http://localhost:2003/products", productData).then((res) => {
-  //       console.log(res.data);
-  //       setProductData({ name: "", category: "", brand: "" }); // Reset the form
-  //       getAllProducts(); // Fetch updated products
-  //     });
-  //   };
-  //   if(errMsg.length==0){
-  //     toHide()
-  //   }
-  // };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    // Reset the error message initially
+   
     setError("");
 
     // Validate inputs
@@ -129,6 +82,7 @@ function App() {
       axios
         .post("http://localhost:2003/products", productData)
         .then((res) => {
+
           console.log("Product added:", res.data);
           setProductData({ name: "", category: "", brand: "" }); // Reset the form
           getAllProducts(); // Fetch updated products
@@ -157,6 +111,7 @@ function App() {
   useEffect(() => {
     getAllProducts();
   }, []);
+
   return (
     <section className="mainConatinare">
       <h1>Do your best as much as possible</h1>
